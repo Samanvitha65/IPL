@@ -1,42 +1,56 @@
 package com.wecp.progressive.entity;
+import java.util.Date;
 
-import java.sql.Date;
+
+
 
 public class Match {
-    private int first_team;
-    private int second_team;
-    private Date match_date;
+    private int matchId;
+    private int firstTeamId;
+    private int secondTeamId;
+    private Date matchDate;
     private String venue;
     private String result;
     private String status;
-    private int winner_team_id;
-    public Match(int first_team, int second_team, Date match_date, String venue, String result, String status,
-            int winner_team_id) {
-        this.first_team = first_team;
-        this.second_team = second_team;
-        this.match_date = match_date;
+    private int winnerTeamId;
+    public Match(){
+
+    }
+    
+    public Match(int matchId, int firstTeamId, int secondTeamId, Date matchDate, String venue, String result,
+            String status, int winnerTeamId) {
+        this.matchId = matchId;
+        this.firstTeamId = firstTeamId;
+        this.secondTeamId = secondTeamId;
+        this.matchDate = matchDate;
         this.venue = venue;
         this.result = result;
         this.status = status;
-        this.winner_team_id = winner_team_id;
+        this.winnerTeamId = winnerTeamId;
     }
-    public int getFirst_team() {
-        return first_team;
+    public int getMatchId() {
+        return matchId;
     }
-    public void setFirst_team(int first_team) {
-        this.first_team = first_team;
+    public void setMatchId(int matchId) {
+        this.matchId = matchId;
     }
-    public int getSecond_team() {
-        return second_team;
+    public int getFirstTeamId() {
+        return firstTeamId;
     }
-    public void setSecond_team(int second_team) {
-        this.second_team = second_team;
+    public void setFirstTeamId(int firstTeamId) {
+        this.firstTeamId = firstTeamId;
     }
-    public Date getMatch_date() {
-        return match_date;
+    public int getSecondTeamId() {
+        return secondTeamId;
     }
-    public void setMatch_date(Date match_date) {
-        this.match_date = match_date;
+    public void setSecondTeamId(int secondTeamId) {
+        this.secondTeamId = secondTeamId;
+    }
+    public Date getMatchDate() {
+        return matchDate;
+    }
+    public void setMatchDate(Date matchDate) {
+        this.matchDate = matchDate;
     }
     public String getVenue() {
         return venue;
@@ -56,12 +70,13 @@ public class Match {
     public void setStatus(String status) {
         this.status = status;
     }
-    public int getWinner_team_id() {
-        return winner_team_id;
+    public int getWinnerTeamId() {
+        return winnerTeamId;
     }
-    public void setWinner_team_id(int winner_team_id) {
-        this.winner_team_id = winner_team_id;
+    public void setWinnerTeamId(int winnerTeamId) {
+        this.winnerTeamId = winnerTeamId;
     }
+    
 
 
 }
