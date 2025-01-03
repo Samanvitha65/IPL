@@ -1,8 +1,7 @@
 package com.wecp.progressive.entity;
+ 
 import java.util.Date;
-
-
-
+ 
 
 public class Match {
     private int matchId;
@@ -13,10 +12,8 @@ public class Match {
     private String result;
     private String status;
     private int winnerTeamId;
-    public Match(){
-
+    public Match() {
     }
-    
     public Match(int matchId, int firstTeamId, int secondTeamId, Date matchDate, String venue, String result,
             String status, int winnerTeamId) {
         this.matchId = matchId;
@@ -77,6 +74,4 @@ public class Match {
         this.winnerTeamId = winnerTeamId;
     }
     
-
-
 }

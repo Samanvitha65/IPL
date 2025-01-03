@@ -1,19 +1,18 @@
 package com.wecp.progressive.entity;
 
-
-public class Team implements Comparable<Team> {
-    private int teamIdd;
+public class Team implements Comparable<Team>{
+    private int teamId;
     private String teamName;
     private String location;
     private String ownerName;
     private int establishmentYear;
-    public Team(){
-
+    
+    public Team() {
     }
     
-    
-     public Team(int teamIdd, String teamName, String location, String ownerName, int establishmentYear) {
-        this.teamIdd = teamIdd;
+
+    public Team(int teamId, String teamName, String location, String ownerName, int establishmentYear) {
+        this.teamId = teamId;
         this.teamName = teamName;
         this.location = location;
         this.ownerName = ownerName;
@@ -22,13 +21,13 @@ public class Team implements Comparable<Team> {
     
 
 
-    public int getTeamIdd() {
-        return teamIdd;
+    public int getTeamId() {
+        return teamId;
     }
 
 
-    public void setTeamIdd(int teamIdd) {
-        this.teamIdd = teamIdd;
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
     }
 
 
@@ -71,10 +70,10 @@ public class Team implements Comparable<Team> {
         this.establishmentYear = establishmentYear;
     }
 
-@Override
-    public int compareTo(Team t){
-        return this.getTeamName().compareTo(t.getTeamName());
-    }
-    
 
+    @Override
+    public int compareTo(Team o) {
+            //  throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    return this.getTeamName().compareTo(o.getTeamName());
+        }
 }
