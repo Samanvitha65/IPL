@@ -50,6 +50,3 @@ public class TeamServiceImplJdbc implements TeamService {
         teamDAO.deleteTeam(teamId);
     }
 }
-
-
-
