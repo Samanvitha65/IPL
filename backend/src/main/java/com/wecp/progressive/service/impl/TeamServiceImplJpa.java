@@ -38,9 +38,12 @@ public class TeamServiceImplJpa  implements TeamService {
 
     @Override
     public int addTeam(Team team) throws SQLException {
+        Optional<Team> existingTeam = teamRepository.findByTeamName(team.getTeamName());
+        if (existingTeam.isPresent()) {
+            throw new TeamAlreadyExistsException("Team with name " + team.getTeamName() + " already exists.");
+        }
         return teamRepository.save(team).getTeamId();
     }
-
     @Override
     public List<Team> getAllTeamsSortedByName() throws SQLException {
         List<Team> sortedTeam = teamRepository.findAll();
@@ -50,12 +53,25 @@ public class TeamServiceImplJpa  implements TeamService {
 
     @Override
     public Team getTeamById(int teamId) throws SQLException {
-        return teamRepository.findByTeamId(teamId);
+        Optional<Team> existingTeam = teamRepository.findByTeamId(teamId);
+        if(!existingTeam.isPresent())
+        {
+            throw new TeamDoesNotExistException("team does not exist");
+        }
+        return teamRepository.findByTeamId(teamId).get();
     }
 
     @Override
     public void updateTeam(Team team) throws SQLException {
-        teamRepository.save(team);
+        Optional<Team> existingTeam = teamRepository.findByTeamName(team.getTeamName());
+        if(existingTeam.isPresent())
+        {
+            throw new TeamAlreadyExistsException("team already exists");
+        }
+        else
+        {
+            teamRepository.save(team);
+        }
     }
 
     @Override
@@ -65,3 +81,6 @@ public class TeamServiceImplJpa  implements TeamService {
         teamRepository.deleteById(teamId);
     }
 }
+
+
+

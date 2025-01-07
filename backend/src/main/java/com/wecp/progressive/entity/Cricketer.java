@@ -23,6 +23,7 @@ public class Cricketer implements Comparable<Cricketer> {
 
     public Cricketer() {
     }
+   
 
     public Cricketer(int cricketerId, int teamId, String cricketerName, int age, String nationality, int experience, String role, int totalRuns, int totalWickets) {
         this.cricketerId = cricketerId;

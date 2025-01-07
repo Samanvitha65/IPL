@@ -1,9 +1,11 @@
 package com.wecp.progressive.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Team implements Comparable<Team>{
@@ -17,7 +19,7 @@ public class Team implements Comparable<Team>{
 
     public Team() {
     }
-
+    
     public Team(int teamId, String teamName, String location, String ownerName, int establishmentYear) {
         this.teamId = teamId;
         this.teamName = teamName;
