@@ -9,7 +9,7 @@ public interface VoteService {
 
     List<Vote> getAllVotes();
 
-    Vote createVote(Vote vote);
+    int createVote(Vote vote);
 
     // Each key (k) represents a category (categories - “Team”, “Batsman”, “Bowler”, “All-rounder” and “Wicketkeeper”)
     // and each value (v) represents the total number of votes for that category.

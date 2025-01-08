@@ -1,5 +1,6 @@
 package com.wecp.progressive.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,35 +11,39 @@ import com.wecp.progressive.entity.Vote;
 import com.wecp.progressive.repository.VoteRepository;
 import com.wecp.progressive.service.VoteService;
 
-//private VoteRepository voteRepository;
-
 @Service
-
 public class VoteServiceImpl implements VoteService {
 
-    @Autowired
+   
     private VoteRepository voteRepository;
+    
+    @Autowired
+    public VoteServiceImpl(VoteRepository voteRepository) {
+        this.voteRepository = voteRepository;
+    }
 
     @Override
     public List<Vote> getAllVotes() {
         return voteRepository.findAll();
-        // TODO Auto-generated method stub
-        //throw new UnsupportedOperationException("Unimplemented method 'getAllVotes'");
     }
 
     @Override
-    public Vote createVote(Vote vote) {
-        return voteRepository.save(vote);
-        // TODO Auto-generated method stub
-        //throw new UnsupportedOperationException("Unimplemented method 'createVote'");
+    public int createVote(Vote vote) {
+        return voteRepository.save(vote).getVoteId();
     }
 
     @Override
     public Map<String, Long> getVotesCountOfAllCategories() {
-       return null;
+        Map<String, Long> voteMap = new HashMap<>();
+
+        voteMap.put("Team", voteRepository.countByCategory("Team"));
+        voteMap.put("Batsman", voteRepository.countByCategory("Batsman"));
+        voteMap.put("Bowler", voteRepository.countByCategory("Bowler"));
+        voteMap.put("All-rounder", voteRepository.countByCategory("All-rounder"));
+        voteMap.put("WicketKeeper", voteRepository.countByCategory("Wicketkeeper"));
+
+        return voteMap;
         
-        // TODO Auto-generated method stub
-        //throw new UnsupportedOperationException("Unimplemented method 'getVotesCountOfAllCategories'");
     }
 
 }
