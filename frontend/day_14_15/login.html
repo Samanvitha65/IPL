@@ -6,5 +6,27 @@
     validate: 
     -loginUsername: should not be empty
     -loginPassword: should not be empty
+    
 
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+</head>
+<body>
+    <form>
+    <label for="username">Username<label>
+    <input type="text" id="username" name ="username" placeholder="Enter Username" required>
+   <label for="pswd">Password</label>
+   <input type="password" id="pswd" name="pswd" pattern="(?=.*\d)(?.=[A-Z]).{8,}">
+
+   <input type="submit" value="Login">
+
+</form>
+    
+</body>
+</html>
