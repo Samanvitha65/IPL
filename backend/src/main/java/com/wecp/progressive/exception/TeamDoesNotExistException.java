@@ -1,11 +1,9 @@
 package com.wecp.progressive.exception;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import java.sql.SQLException;
 
-//@ResponseStatus(HttpStatus.NOT_FOUND)
-public class TeamDoesNotExistException extends RuntimeException {
-    public TeamDoesNotExistException(String message){
-        super(message);
+public class TeamDoesNotExistException extends SQLException {
+    public TeamDoesNotExistException (String m){
+        super(m);
     }
 }

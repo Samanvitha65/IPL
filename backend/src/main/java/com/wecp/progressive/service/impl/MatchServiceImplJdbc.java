@@ -15,6 +15,36 @@ public class MatchServiceImplJdbc implements MatchService {
         this.matchDAO = matchDAO;
     }
 
+    // @Override
+    // public List<Match> getAllMatches() {
+    //     return List.of();
+        
+    // }
+
+    // @Override
+    // public Match getMatchById(int matchId) {
+    //     return null;
+
+        
+    // }
+
+    // @Override
+    // public Integer addMatch(Match match) {
+    //     return -1;
+        
+    // }
+
+    // @Override
+    // public void updateMatch(Match match) {
+
+
+    // }
+
+    // @Override
+    // public void deleteMatch(int matchId) {
+        
+    // }
+
     @Override
     public List<Match> getAllMatches() throws SQLException {
         return matchDAO.getAllMatches();

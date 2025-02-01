@@ -29,6 +29,7 @@ public class JwtUtil {
  
     private final int expiration = 86400;
  
+    @SuppressWarnings("deprecation")
     public String generateToken(String username) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + expiration * 1000);
@@ -48,6 +49,7 @@ public class JwtUtil {
                 .compact();
     }
  
+    @SuppressWarnings("deprecation")
     public Claims extractAllClaims(String token) {
         Claims claims;
         try {
@@ -62,6 +64,7 @@ public class JwtUtil {
     }
  
     public String extractUsername(String token) {
+        @SuppressWarnings("deprecation")
         Claims claims = Jwts.parser()
                 .setSigningKey(secret)
                 .parseClaimsJws(token)
@@ -70,6 +73,7 @@ public class JwtUtil {
     }
  
     public boolean isTokenExpired(String token) {
+        @SuppressWarnings("deprecation")
         Date expirationDate = Jwts.parser()
                 .setSigningKey(secret)
                 .parseClaimsJws(token)

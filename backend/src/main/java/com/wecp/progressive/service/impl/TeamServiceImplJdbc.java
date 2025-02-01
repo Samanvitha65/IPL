@@ -16,6 +16,21 @@ public class TeamServiceImplJdbc implements TeamService {
         this.teamDAO = teamDAO;
     }
 
+    // @Override
+    // public List<Team> getAllTeams() {
+    //     return List.of();
+    // }
+
+    // @Override
+    // public int addTeam(Team team) {
+    //     return -1;
+    // }
+                                              
+    // @Override
+    // public List<Team> getAllTeamsSortedByName() {
+    //     return List.of();
+    // }
+
     @Override
     public List<Team> getAllTeams() throws SQLException {
         return teamDAO.getAllTeams();

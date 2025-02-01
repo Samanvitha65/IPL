@@ -36,3 +36,4 @@ export class RegistrationComponent {
     this.registrationForm.reset();
   }
 }
+

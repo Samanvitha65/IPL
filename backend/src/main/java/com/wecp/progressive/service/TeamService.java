@@ -13,18 +13,16 @@ public interface TeamService {
 
     List<Team> getAllTeamsSortedByName() throws SQLException;
 
-    default void emptyArrayList() {
+    default void emptyArrayList() throws SQLException{
     }
 
     //Do not implement these methods in TeamServiceImplArrayList.java class
-    default Team getTeamById(int teamId) throws SQLException {
+    default Team getTeamById(int teamId) throws SQLException{// throws SQLException {
         return null;
     }
 
-    default void updateTeam(Team team) throws SQLException {}
+    default void updateTeam(Team team) throws SQLException{}//  throws SQLException{}
 
-    default void deleteTeam(int teamId) throws SQLException {}
+    default void deleteTeam(int teamId) throws SQLException{}//  throws SQLException{}
 
 }
-    //Do not implement these methods in TeamServiceImplArrayList.java class
-    
